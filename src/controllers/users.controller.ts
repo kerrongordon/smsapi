@@ -1,9 +1,10 @@
-import express, { Request, Response } from 'express';
+import express, { Response } from 'express'
+import { IGetUserAuthInfoRequest } from '../utilities/request.util'
 
 const router = express.Router();
 
-router.get('/', (req: Request, res: Response) => {
-    res.send('all Users list');
+router.get('/', (req: IGetUserAuthInfoRequest, res: Response) => {
+    res.send(req.user);
 });
 
 
